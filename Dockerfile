@@ -3,6 +3,7 @@ RUN apk add --no-cache git
 RUN apk add g++
 
 WORKDIR /tradeX
+RUN mkdir resources
 
 COPY go.mod .
 COPY go.sum .

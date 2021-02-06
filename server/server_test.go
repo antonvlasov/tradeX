@@ -115,37 +115,3 @@ func TestServer(t *testing.T) {
 		t.Errorf("wrong stats")
 	}
 }
-
-// func TestItems(t *testing.T) {
-// 	arith := new(Arith)
-
-// 	rpc.Register(arith)
-// 	rpc.HandleHTTP()
-
-// 	l, e := net.Listen("tcp", ":1234")
-// 	if e != nil {
-// 		log.Fatal("Dial error:", e)
-// 	}
-// 	conn, e := l.Accept()
-// 	if e != nil {
-// 		log.Fatal("Accept error:", e)
-// 	}
-// 	fmt.Println("accepted")
-// 	//go http.Serve(l, nil)
-// 	jsonrpc.ServeConn(conn)
-
-// 	serverAddress := "127.0.0.1"
-
-// 	client, err := jsonrpc.Dial("tcp", serverAddress+":1234")
-// 	if err != nil {
-// 		log.Fatal("dialing:", err)
-// 	}
-// 	// Synchronous call
-// 	args := Args{7, 8}
-// 	var reply int
-// 	err = client.Call("Arith.Multiply", args, &reply)
-// 	if err != nil {
-// 		log.Fatal("arith error:", err)
-// 	}
-// 	fmt.Printf("Arith: %d*%d=%d", args.A, args.B, reply)
-// }
